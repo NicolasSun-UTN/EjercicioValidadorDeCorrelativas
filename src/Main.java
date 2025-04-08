@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import domain.Alumno;
+import domain.Inscripcion;
+import domain.Materia;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        var materia1 = new Materia("materia1", null);
+        var materia2 = new Materia("materia2", null);
+        var materia3 = new Materia("materia3", new Materia[]{materia1});
+        var materia4 = new Materia("materia4", new Materia[]{materia2});
+        var materia5 = new Materia("materia5", new Materia[]{materia1, materia2});
+        var materia6 = new Materia("materia6", new Materia[]{materia3});
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+        var ingresante = new Alumno(1234, "nicolas", new Materia[]{materia6});
+
+        var inscripcionNueva = new Inscripcion(ingresante, new Materia[]{materia6});
+
+        if (inscripcionNueva.aprobada()) {
+            System.out.println("Inscripcion aprobada");
+        } else {
+            System.out.println("Inscripcion desaprobada");
         }
     }
 }

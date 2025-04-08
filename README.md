@@ -1,3 +1,5 @@
+## DIAGRAMA DE CLASES
+
 ```mermaid
 classDiagram
     class Alumno {

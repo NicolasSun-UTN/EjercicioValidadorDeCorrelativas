@@ -1,6 +1,5 @@
 package domain;
 
-
 public class Alumno {
     private int legajo;
     private String nombre;
@@ -17,7 +16,9 @@ public class Alumno {
     }
 
     public boolean tieneMateriasAprobadas() {
-        if (this.materiasAprobadas == null) {return false;}
+        if (this.materiasAprobadas == null) {
+            return false;
+        }
         return this.materiasAprobadas.length != 0;
     }
 }

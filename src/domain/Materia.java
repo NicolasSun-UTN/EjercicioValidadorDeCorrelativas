@@ -16,9 +16,6 @@ public class Materia {
     }
 
     public boolean tieneCorrelativas() {
-        if (this.correlativas == null) {
-            return false;
-        }
-        return this.correlativas.length != 0;
+        return correlativas != null && correlativas.length > 0;
     }
 }

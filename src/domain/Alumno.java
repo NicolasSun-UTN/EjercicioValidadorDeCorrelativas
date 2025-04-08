@@ -16,9 +16,6 @@ public class Alumno {
     }
 
     public boolean tieneMateriasAprobadas() {
-        if (this.materiasAprobadas == null) {
-            return false;
-        }
-        return this.materiasAprobadas.length != 0;
+        return materiasAprobadas != null && materiasAprobadas.length > 0;
     }
 }
